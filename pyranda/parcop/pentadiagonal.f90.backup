@@ -882,7 +882,7 @@
       END DO
    CASE(2) ! operate on second index
       if (use_ppent_opt) then
-         call ppentlus_f77(n1,n2,n3,clu,frhs)
+         call ppentlus_f77(n1,n2,n3,clu(1,1),frhs(1,1,1))
          return
       end if
 !      flopCount = n1*n3*(17*n2 - 40)
@@ -922,7 +922,7 @@
       END DO
    CASE(3) ! operate on third index
       if (use_ppent_opt) then
-         call ppentlus_f77(n1*n2,n3,1,clu,frhs)
+         call ppentlus_f77(n1*n2,n3,1,clu(1,1),frhs(1,1,1))
          return
       end if
 !      flopCount = n1*n2*(17*n3 - 40)
